@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rikka Takanashi | Discord Bot</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#080812;
+color:white;
+overflow-x:hidden;
+}
+
+/* Background */
+
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:
+radial-gradient(circle at top,#5b5cff55 0%,transparent 40%),
+radial-gradient(circle at bottom,#8b5cf655 0%,transparent 35%),
+linear-gradient(180deg,#080812,#0d1022,#080812);
+z-index:-2;
+}
+
+body::after{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background-image:
+radial-gradient(white 1px,transparent 1px);
+background-size:60px 60px;
+opacity:.08;
+z-index:-1;
+animation:stars 60s linear infinite;
+}
+
+@keyframes stars{
+from{transform:translateY(0);}
+to{transform:translateY(-120px);}
+}
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 10%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(8,8,18,.65);
+backdrop-filter:blur(20px);
+border-bottom:1px solid rgba(255,255,255,.05);
+z-index:999;
+}
+
+.logo{
+font-size:26px;
+font-weight:700;
+color:#8b8dff;
+}
+
+nav ul{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+transition:.3s;
+}
+
+nav a:hover{
+color:#8b8dff;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:120px 20px;
+}
+
+.hero-content{
+max-width:900px;
+}
+
+.hero h1{
+font-size:70px;
+margin-bottom:20px;
+background:linear-gradient(90deg,#8b5cf6,#6ea8ff,#ffffff);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.hero h2{
+font-size:24px;
+font-weight:300;
+margin-bottom:20px;
+color:#cfcfff;
+}
+
+.hero p{
+font-size:18px;
+line-height:1.8;
+color:#d9d9e8;
+margin-bottom:40px;
+}
+
+.buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:15px 36px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+transition:.35s;
+}
+
+.primary{
+background:linear-gradient(90deg,#7c5cff,#4f8cff);
+color:white;
+}
+
+.primary:hover{
+transform:translateY(-4px);
+box-shadow:0 15px 35px rgba(116,92,255,.4);
+}
+
+.secondary{
+border:2px solid #7c5cff;
+color:white;
+}
+
+.secondary:hover{
+background:#7c5cff;
+}
+
+section{
+padding:90px 10%;
+}
+
+.title{
+font-size:40px;
+text-align:center;
+margin-bottom:50px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.card{
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(18px);
+padding:30px;
+border-radius:20px;
+transition:.35s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:#7c5cff;
+box-shadow:0 15px 40px rgba(124,92,255,.2);
+}
+
+.card h3{
+margin-bottom:15px;
+color:#b7b8ff;
+}
+
+.card p{
+line-height:1.7;
+color:#ddd;
+}
+
+.commands{
+text-align:center;
+}
+
+.command{
+display:inline-block;
+margin:12px;
+padding:18px 28px;
+background:#171727;
+border-radius:14px;
+font-size:20px;
+font-weight:600;
+color:#8ea6ff;
+}
+
+footer{
+padding:50px;
+text-align:center;
+background:#06060d;
+color:#888;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:50px;
+}
+
+nav{
+padding:20px;
+}
+
+nav ul{
+display:none;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">Rikka Takanashi</div>
+
+<ul>
+<li><a href="#features">Features</a></li>
+<li><a href="#commands">Commands</a></li>
+<li><a href="#invite">Invite</a></li>
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h2>The Ultimate Anime Discord Companion</h2>
+
+<p>
+
+Inspired by <strong>Love, Chunibyo & Other Delusions!</strong>, Rikka Takanashi brings personality,
+intelligence, moderation, and endless entertainment into your Discord server.
+
+</p>
+
+<div class="buttons">
+
+<a class="btn primary" href="https://discord.com/oauth2/authorize?client_id=1489199264562155550&permissions=8866461766385655&integration_type=0&scope=bot" target="_blank">
+➜ Invite Rikka
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="features">
+
+<h2 class="title">Features</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>🤖 Interactive AI</h3>
+
+<p>
+
+Powered by an interactive AI system capable of engaging conversations,
+answering questions, roleplaying, and making every server feel alive.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🛡️ Moderation</h3>
+
+<p>
+
+Keep your server safe using moderation commands,
+permissions, automated management,
+and configurable tools for every community.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🎉 Fun Commands</h3>
+
+<p>
+
+Memes, reactions, games, anime-inspired interactions,
+and entertaining commands that keep everyone engaged.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>⚙️ Easy Configuration</h3>
+
+<p>
+
+Customize Rikka with a simple setup command and configure
+features exactly how your community needs them.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="commands">
+
+<h2 class="title">Getting Started</h2>
+
+<div class="commands">
+
+<div class="command">
+r!help
+</div>
+
+<p style="margin-bottom:40px;color:#ccc;">
+View the complete command list.
+</p>
+
+<div class="command">
+r!config
+</div>
+
+<p style="color:#ccc;">
+Configure Rikka for your Discord server.
+</p>
+
+</div>
+
+</section>
+
+<section id="invite">
+
+<h2 class="title">Invite Rikka Today</h2>
+
+<div style="text-align:center;">
+
+<p style="margin-bottom:35px;color:#ccc;font-size:18px;">
+
+Ready to awaken the Wicked Eye?
+Bring Rikka Takanashi into your server and enjoy intelligent conversations,
+powerful moderation, and anime inspired fun.
+
+</p>
+
+<a class="btn primary"
+href="https://discord.com/oauth2/authorize?client_id=1489199264562155550&permissions=8866461766385655&integration_type=0&scope=bot"
+target="_blank">
+
+Invite Rikka
+
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 - Velima LLC.
+
+</footer>
+
+</body>
+</html>
